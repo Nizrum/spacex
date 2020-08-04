@@ -1,4 +1,4 @@
-*, *:before, *:after {
+* {
     box-sizing: border-box;
 }
 
@@ -34,10 +34,22 @@ body {
     margin: 0 10px;
     font-size: 12px;
     line-height: 14px;
+    position: relative;
 }
 
-.item:after {
+.item-link::after {
+    content: '';
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: #ffffff;
+    display: inline-block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: scale(0);
+    transition: 0.2s;
+}
+
+.item:hover .item-link::after {
+    transform: scale(1);
 }
